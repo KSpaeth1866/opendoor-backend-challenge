@@ -1,0 +1,24 @@
+{
+  "name": "opendoor-backend-challenge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KSpaeth1866/opendoor-backend-challenge.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KSpaeth1866/opendoor-backend-challenge/issues"
+  },
+  "homepage": "https://github.com/KSpaeth1866/opendoor-backend-challenge#readme",
+  "dependencies": {
+    "d3-dsv": "^1.0.7",
+    "express": "^4.16.2"
+  }
+}
