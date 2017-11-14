@@ -29,8 +29,36 @@ router.get('/listings', (req, res) => {
     max_bath,
   } = req.query;
 
+  let features = data
+  .filter(listing => {
+    if (listing.price < min_price) return false;
+    if (listing.price > max_price) return false;
+    if (listing.bedrooms < min_bed) return false;
+    if (listing.bedrooms > max_bed) return false;
+    if (listing.bathrooms < min_bath) return false;
+    if (listing.bathrooms > max_bath) return false;
+    return true;
+  })
+  .map(listing => {
+    return {
+      type: "Feature",
+      geometry: {
+        type: "Point",
+        coordinates: [listing.lng, listing.lat]
+      },
+      "properties": {
+        "id": listing.id,
+        "price": listing.price,
+        "street": listing.street,
+        "bedrooms": listing.bedrooms,
+        "bathrooms": listing.bathrooms,
+        "sq_ft": listing.sq_ft,
+      }
+    }
+  });
   res.json({
-    success: true,
+    type: "FeatureCollection",
+    features: features.slice(0, 3),
   })
 })
 
