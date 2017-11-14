@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/KSpaeth1866/opendoor-backend-challenge#readme",
   "dependencies": {
+    "axios": "^0.17.1",
     "d3-dsv": "^1.0.7",
     "express": "^4.16.2"
   }
